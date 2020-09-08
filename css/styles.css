@@ -31,6 +31,10 @@ header {
   color: var(--background);
 }
 
+.banner {
+  cursor: pointer;
+}
+
 .content {
   display: flex;
   flex-direction: row;

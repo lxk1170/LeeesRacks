@@ -10,16 +10,26 @@
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12"></script>
     <script lang="vue">
     document.addEventListener('DOMContentLoaded', ()=>{
+        var API = 'https://5eeht3rpq0.execute-api.us-east-2.amazonaws.com/Test'
+
         var people = new Vue({
             el: '#project',
             data: {
-              project: "unknown",
-              description: "load description"
+                project: "unknown",
+                description: "load description"
             },
-	    created() {
-          this.project = localStorage.getItem("leees-project")
-        },
-	    methods: {}
+      	    created() {
+                this.project = localStorage.getItem("leees-project")
+                params = new URLSearchParams({"project": this.project})
+                url = API + "?" +  params
+
+                fetch(url)
+                .then(res => res.json())
+                .then(data => {
+                    this.project = data.body
+                })
+            },
+    	    methods: {}
         })
     })
     </script>
@@ -27,21 +37,24 @@
 </head>
 <body>
   <div id="project">
-    <header class="no-select highlight">Leee's Rack<span class="right theme">{{project}}</span></header>
+    <header class="no-select highlight">
+        <span class="banner" v-on:click="window.location.href='./index.html'">Leee's Rack</span>
+        <span class="right theme">{{project.name}}</span>
+    </header>
     <div class="content">
 
       <div>
         <h1>todo</h1>
         <ul class="todo">
-          <li>item A</li>
-          <li>item B</li>
-          <li>item C</li>
+          <li>x</li>
+          <li>y</li>
+          <li>x</li>
         </ul>
       </div>
 
       <div>
         <h1>notes</h1>
-        <p>{{description}}</p>
+        <p>{{project.description}}</p>
       </div>
 
       <div>

@@ -13,9 +13,16 @@
   var people = new Vue({
     el: '#rack',
     data: {
-      projects: ["DOVES", "Fuck $#@%", "DAED BAET", "POEMS.pain"],
+      projects: ["none"],
     },
-    created() {},
+    mounted() {
+      // load projects from rack/*/.project.json
+      fetch('https://5eeht3rpq0.execute-api.us-east-2.amazonaws.com/Test')
+      .then(res => res.json())
+      .then(data => {
+        this.projects = data.body.map(project => project.name)
+      })
+    },
     methods: {
       select: (project) => {
         localStorage.setItem("leees-project", project)
