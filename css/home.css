@@ -1,0 +1,41 @@
+
+.project {
+  flex: 1;
+  flex-grow: 5;
+  background-color: var(--theme-highlight);
+  border-radius: 1px;
+  margin: 3%;
+  font-size: 7em;
+  padding: 2%;
+  text-align: center;
+  box-shadow: 5px 2px 10px var(--theme);
+  max-width: 90%;
+}
+
+.project:hover {
+  background-color: var(--theme-alt);
+  box-shadow: 10px 4px 50px var(--theme-highlight);
+  cursor: pointer;
+}
+
+.project:active {
+  background-color: var(--theme-alt);
+  box-shadow: 10px 4px 50px black;
+  cursor: wait;
+  animation-name: zoom-in;
+  animation-duration: 1s;
+  box-shadow: 0px 0px 0px black;
+}
+
+@keyframes zoom-in {
+  0% {}
+  50% {
+    background-color: var(--theme-accent);
+    box-shadow: 0px 0px 0px black;
+  }
+  100% {
+    background-color: var(--theme-accent);
+  }
+}
+
+

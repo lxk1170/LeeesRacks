@@ -1,0 +1,23 @@
+html {
+  background-color: var(--theme-accent);
+}
+
+header {
+  background-color: var(--theme-accent);
+  color: var(--theme);
+}
+
+#project {
+  background-color: var(--theme-highlight);
+  animation-name: zoom-in;
+  animation-duration: 0.5s;
+}
+
+.todo {
+  list-style-type: lower-roman;
+}
+
+@keyframes zoom-in {
+  from { margin: 20%; }
+  to { margin: 0; }
+}

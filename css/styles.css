@@ -1,0 +1,74 @@
+:root {
+  --theme-accent: #F0DC82;
+  --theme: #7948A3;
+  --theme-alt: #B875F0;
+  --theme-shade: #6888A3;
+  --theme-highlight: #8DC2F0;
+
+  --background: var(--theme-accent);
+}
+
+html {
+  background-color: var(--theme-shade);
+  color: var(--theme);
+  margin-left: 20%;
+  margin-right: 20%;
+  min-height: 100%;
+}
+
+body {
+  background-color: var(--background);
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  font-size: 4em;
+  font-weight: 900;
+  background-color: var(--theme-shade);
+  color: var(--background);
+}
+
+.content {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: 2em;
+}
+
+.content > div {
+  flex: 1;
+  border-left-style: solid;
+  border-color: var(--theme-shade);
+  border-width: 1px;
+  padding-left: 1em;
+  padding-right: 1em;
+}
+
+.content > div > h1, h2, h3, h4, h5, h6 {
+  color: var(--theme-alt);
+}
+
+#rack {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  box-shadow: 20px 7px 5px black;
+}
+
+.no-select {
+  user-select: none;
+  -webkit-user-select: none; /* epiphany */
+}
+.accent { color: var(--theme-accent); }
+.alt { color: var(--theme-alt); }
+.theme { color: var(--theme); }
+.highlight{ color: var(--theme-highlight); }
+.right { float: right; }
+.left { float: left; }
+
+
+

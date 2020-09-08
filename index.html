@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Leee's Racks</title>
+<meta name="description" content="Leee's Racks">
+<meta name="viewport" content="width=device-width">
+<link rel="stylesheet" href="css/styles.css">
+<link rel="stylesheet" href="css/home.css">
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.12"></script>
+<script lang="vue">
+  document.addEventListener('DOMContentLoaded', ()=>{
+  var people = new Vue({
+    el: '#rack',
+    data: {
+      projects: ["DOVES", "Fuck $#@%", "DAED BAET", "POEMS.pain"],
+    },
+    created() {},
+    methods: {
+      select: (project) => {
+        localStorage.setItem("leees-project", project)
+        window.location.href = "./project.html"
+      }
+    }
+  })
+})
+</script>
+
+</head>
+<body>
+  <header class="no-select">Leee's Rack</header>
+  <div id="rack">
+    <div class="project no-select" v-for="project in projects" v-on:click="select(project)">{{project}}</div>
+  <div>
+</body>
+</html>
